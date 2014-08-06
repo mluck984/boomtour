@@ -12,7 +12,7 @@ h1.page-header-title, h1.board-header-title{ color: #ffffff; }
 div.page-header-caption, div.board-header-caption{ color: #ffffff; } 
 h1, h2, h3, h4, h5, h6{ color: #ffffff; } 
 body{ color: #d8d8d8; } 
-html{ background-color: #3f3f3f; } 
+html{ background-color: #71cbe2; } 
 a{ color: #ffc104; } 
 a:hover{ color: #ffdd77; } 
 ::selection, ::-moz-selection{ color: #ffffff; } 
@@ -24,13 +24,13 @@ a:hover{ color: #ffdd77; }
 div.recent-port-widget .recent-port-widget-thumbnail, div.recent-post-widget .recent-post-widget-thumbnail, div.custom-sidebar .flickr_badge_image{ background-color: #191919; } 
 .tagcloud a{ background-color: #0a0a0a; } 
 div.footer-top-bar{ background-color: #0a0a0a; } 
-.footer-wrapper a{ color: #ffffff; } 
-.footer-wrapper a:hover{ color: #a3a3a3; } 
-.footer-wrapper .custom-sidebar-title, .footer-wrapper .custom-sidebar-title a{ color: #ffffff; } 
-.footer-wrapper, .footer-wrapper table th{ color: #9e9e9e; } 
+.footer-wrapper a{ color: #0532fb; } 
+.footer-wrapper a:hover{ color: #0532fb; } 
+.footer-wrapper .custom-sidebar-title, .footer-wrapper .custom-sidebar-title a{ color: #e4047a; } 
+.footer-wrapper, .footer-wrapper table th{ color: #e4047a; } 
 .footer-wrapper .recent-post-widget-info, .footer-wrapper #twitter_update_list{ color: #939393; } 
-div.footer-wrapper{ background-color: #0a0a0a; } 
-div.footer-wrapper *{ border-color: #3b3b3b; } 
+div.footer-wrapper{ background-color: #ded141; } 
+div.footer-wrapper *{ border-color: #e4047a; } 
 div.footer-wrapper div.contact-form-wrapper input[type="text"], div.footer-wrapper div.contact-form-wrapper input[type="password"], div.footer-wrapper div.contact-form-wrapper textarea, div.footer-wrapper div.custom-sidebar #search-text input[type="text"]{ color: #dbdbdb; } 
 div.footer-wrapper div.contact-form-wrapper input[type="text"], div.footer-wrapper div.contact-form-wrapper input[type="password"], div.footer-wrapper div.contact-form-wrapper textarea, div.footer-wrapper div.custom-sidebar #search-text input[type="text"]{ background-color: #2b2b2b; } 
 div.footer-wrapper div.contact-form-wrapper input[type="text"], div.footer-wrapper div.contact-form-wrapper input[type="password"], div.footer-wrapper div.contact-form-wrapper textarea, div.footer-wrapper div.custom-sidebar #search-text input[type="text"]{ border-color: #444444; } 
@@ -122,36 +122,34 @@ div.gdl-carousel-testimonial .testimonial-content{ background-color: #0a0a0a; }
 div.gdl-static-testimonial .testimonial-item{ color: #eaeaea; } 
 div.gdl-static-testimonial .testimonial-item{ border-color: #eaeaea; } 
 div.gdl-static-testimonial .testimonial-info{ color: #eaeaea; } 
-div.custom-background-overlay{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/pattern/pattern-p2.png); } 
 .logo-wrapper{ padding-top: 32px; padding-bottom: 23px; } 
 ul.sf-menu li{ padding-top: 39px; } 
 div.navigation-wrapper{ font-size: 14px; } 
 body{ font-size: 15px; } 
-h3.custom-sidebar-title{ font-size: 34px; } 
+h3.custom-sidebar-title{ font-size: 26px; } 
 h1{ font-size: 50px; } 
 h2{ font-size: 40px; } 
 h3{ font-size: 33px; } 
 h4{ font-size: 25px; } 
 h5{ font-size: 22px; } 
 h6{ font-size: 19px; } 
-body{ font-family: ""; } 
-h1, h2, h3, h4, h5, h6, .blog-comment{ font-family: ""; } 
-.gdl-slider-title{ font-family: ""; } 
-h1.stunning-text-title{ font-family: ""; } 
-div.navigation-wrapper{ font-family: ""; } 
-div.filter-layout-wrapper .filter-layout-title-wrapper span, div.filter-order-wrapper .filter-order-title-wrapper span{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/filter-board-icon.png) right center no-repeat; } 
-div.blog-tag{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/tag-icon.png) 0px center no-repeat; } 
-div.blog-author{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/author-icon.png) 0px center no-repeat; } 
-div.blog-date-wrapper{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/date-icon.png) 0px center no-repeat; } 
-div.blog-comment{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/comment-icon.png) 0px center no-repeat; } 
-ul.gdl-accordion li.active .accordion-title, ul.gdl-toggle-box li.active .toggle-box-title{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/accordion-title-active.png); } 
-ul.gdl-accordion li .accordion-title, ul.gdl-toggle-box li .toggle-box-title{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/accordion-title.png); } 
-div.gdl-carousel-testimonial .testimonial-content{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/testimonial-quote.png); } 
-div.personnal-widget-prev{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/personnal-widget-left.png); } 
-div.personnal-widget-next{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/personnal-widget-right.png); } 
-div.gdl-search-button, div.custom-sidebar #searchsubmit{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/search-button.png) no-repeat center; } 
-div.top-search-wrapper input[type='submit']{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/search-button.png) no-repeat center center;; } 
-div.custom-sidebar ul li{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/dark/li-arrow.png) no-repeat 0px center; } 
+h1, h2, h3, h4, h5, h6, .blog-comment{ font-family: "Oswald"; } 
+.gdl-slider-title{ font-family: "Oswald"; } 
+h1.stunning-text-title{ font-family: "Oswald"; } 
+div.navigation-wrapper{ font-family: "Open Sans"; } 
+div.filter-layout-wrapper .filter-layout-title-wrapper span, div.filter-order-wrapper .filter-order-title-wrapper span{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/filter-board-icon.png) right center no-repeat; } 
+div.blog-tag{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/tag-icon.png) 0px center no-repeat; } 
+div.blog-author{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/author-icon.png) 0px center no-repeat; } 
+div.blog-date-wrapper{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/date-icon.png) 0px center no-repeat; } 
+div.blog-comment{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/comment-icon.png) 0px center no-repeat; } 
+ul.gdl-accordion li.active .accordion-title, ul.gdl-toggle-box li.active .toggle-box-title{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/accordion-title-active.png); } 
+ul.gdl-accordion li .accordion-title, ul.gdl-toggle-box li .toggle-box-title{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/accordion-title.png); } 
+div.gdl-carousel-testimonial .testimonial-content{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/testimonial-quote.png); } 
+div.personnal-widget-prev{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/personnal-widget-left.png); } 
+div.personnal-widget-next{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/personnal-widget-right.png); } 
+div.gdl-search-button, div.custom-sidebar #searchsubmit{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/search-button.png) no-repeat center; } 
+div.top-search-wrapper input[type='submit']{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/search-button.png) no-repeat center center;; } 
+div.custom-sidebar ul li{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/li-arrow.png) no-repeat 0px center; } 
 div.footer-wrapper div.custom-sidebar ul li{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/li-arrow.png) no-repeat 0px center; } 
 div.footer-wrapper div.custom-sidebar #searchsubmit{ background: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/search-button.png) no-repeat center; } 
 div.footer-wrapper div.personnal-widget-prev{ background-image: url(http://dev.frwdco.com/angies/boomtour/wp-content/themes/rocketboard-v1-02/images/icon/light/personnal-widget-left.png); } 
