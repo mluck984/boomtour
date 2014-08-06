@@ -37,7 +37,7 @@ get_header(); ?>
     </div>
     
     <a href="https://www.facebook.com/Boomchickapop/app_112053162216760" target="_blank">
-    <div class="grid-item big" style="background: url('wp-content/themes/rocketboard-v1-02/images/ANG_boomtour_sweeps_image_sm.png'); background-size:cover;">
+    <div class="grid-item big sweepstakes" style="background: url('wp-content/themes/rocketboard-v1-02/images/ANG_boomtour_sweeps_image_sm.png'); background-size:cover;">
     
     </div>
     </a>
@@ -60,7 +60,7 @@ get_header(); ?>
         <?php endif; ?>
         
 		<?php if($item['type'] == "photo") : ?>
-        	<a href="<?php echo $item['image'] ?>" title="<?php echo $item['caption'] ?>" class="image-popup-fit-width" >
+        	<a href="<?php echo $item['image'] ?>" title="<p><?php echo $item['caption'] ?></p><p><a href='<?php echo $item['link'] ?>' target='_blank'>View on Instagram</a></p>" class="image-popup-fit-width" >
                 <div class="grid-item <?php echo $item['type'] ?>" style="background: url('<?php echo $item['thumbnail'] ?>'); background-size:cover;">
                 <div><span></span><p><?php echo trimCaption($item['caption']) ?></p></div>
                 </div>

@@ -26,7 +26,9 @@ $(document).ready(function(){
 				if($(this).hasClass(type)){
 					$(this).delay(delay).fadeIn("fast");
 				} else{
-					$(this).delay(delay).fadeOut("fast");
+					if(! $(this).hasClass('sweepstakes')){
+						$(this).delay(delay).fadeOut("fast");
+					}
 				}
 				delay += 10;
 			});
@@ -79,7 +81,7 @@ $(function() {
 	if( screen.width > 640 ) {
 		var BV = new $.BigVideo({container: $('.header-video'), doLoop: true});
 		BV.init();
-		BV.show('wp-content/themes/rocketboard-v1-02/assets/Boomtour_vid_70percentpink.mp4',{ambient:true});
+		BV.show('wp-content/themes/rocketboard-v1-02/assets/LessBlack.mp4',{ambient:true});
 	}
 });
 
