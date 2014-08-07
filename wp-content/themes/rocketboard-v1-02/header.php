@@ -114,6 +114,7 @@
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/masonry.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/video.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/bigvideo.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script></script>
 
 </head>
 

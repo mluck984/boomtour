@@ -107,6 +107,13 @@ src: url('fonts/Brandon_bld.otf'),
 	margin: -12px 15px 0px 0px;
 }
 
+#map-cta{
+	font-family: BrandonBold;
+	text-align:center;
+	background-color:#fff;
+	
+}
+
 .grid-filters{
 	margin: 10px 0;
 }

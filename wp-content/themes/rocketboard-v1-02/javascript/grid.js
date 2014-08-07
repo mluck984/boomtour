@@ -79,9 +79,13 @@ $(document).ready(function(){
 
 $(function() {
 	if( screen.width > 640 ) {
-		var BV = new $.BigVideo({container: $('.header-video'), doLoop: true});
+		var BV = new $.BigVideo({container: $('.header-video'), doLoop: true, useFlashForFirefox:false});
 		BV.init();
-		BV.show('wp-content/themes/rocketboard-v1-02/assets/LessBlack.mp4',{ambient:true});
+		if ($.browser.mozilla) {
+			BV.show('wp-content/themes/rocketboard-v1-02/assets/LessBlack.ogv',{ambient:true});
+		} else{
+			BV.show('wp-content/themes/rocketboard-v1-02/assets/LessBlack.mp4',{ambient:true});
+		}
 	}
 });
 
