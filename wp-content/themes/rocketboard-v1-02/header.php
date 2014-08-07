@@ -111,6 +111,7 @@
     
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/jquery-1.10.2.min.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/jquery-ui.min.js"></script>
+	<script src="wp-content/themes/rocketboard-v1-02/javascript/masonry.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/video.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/bigvideo.js"></script>
 
@@ -240,7 +241,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="header-text">
                 <h1>Welcome to the Boom Tour<sup>™</sup>!</h1>
                 <h3>Bringing the Boom is what we do. We're out on a fantastical 
-adventure across the US! Join us for the road trip of the summer.</h3>
+adventure across the U.S. of A! Join us for the road trip of the summer.</h3>
             </div>
 
 			<div class="gdl-navigation-wrapper">

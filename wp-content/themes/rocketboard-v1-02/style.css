@@ -20,35 +20,46 @@ License URI:
 
 /* Custom Additions */
 
-
 @font-face
 {
 font-family: GiorgioSans;
-src: url(fonts/GiorgioSans-Regular.otf);
+src: url('fonts/GiorgioSans-Regular.otf'),
+	url('fonts/GiorgioSans-Regular.ttf'),
+	url('fonts/GiorgioSans-Regular.woff'),
+	url('fonts/GiorgioSans-Regular.eot') format('embedded-opentype');
 }
 
 @font-face
 {
 font-family: GiorgioSansBold;
-src: url(fonts/GiorgioSans-Bold.otf);
+src: url('fonts/GiorgioSans-Bold.otf'),
+	url('fonts/GiorgioSans-Bold.ttf'),
+	url('fonts/GiorgioSans-Bold.woff'),
+	url('fonts/GiorgioSans-Bold.eot') format('embedded-opentype');
 }
 
 @font-face
 {
 font-family: JubilatBold;
-src: url(fonts/Jubilat-Bold.otf);
+src: url('fonts/Jubilat-Bold.otf');
 }
 
 @font-face
 {
 font-family: BrandonGrotesque;
-src: url(fonts/BrandonGrotesque-Regular.otf);
+src: url('fonts/BrandonGrotesque-Regular.otf'),
+	url('fonts/BrandonGrotesque-Regular.ttf'),
+	url('fonts/BrandonGrotesque-Regular.woff'),
+	url('fonts/BrandonGrotesque-Regular.eot') format('embedded-opentype');;
 }
 
 @font-face
 {
 font-family: BrandonBold;
-src: url(fonts/Brandon_bld.otf);
+src: url('fonts/Brandon_bld.otf'),
+	url('fonts/BrandonGrotesque-Regular.ttf'),
+	url('fonts/BrandonGrotesque-Regular.woff'),
+	url('fonts/Brandon_bld.eot') format('embedded-opentype');;
 }
 
 .header-video{
@@ -88,7 +99,7 @@ src: url(fonts/Brandon_bld.otf);
 	font-size:20px;
 	text-align:center;
 	margin: 15px auto 10px auto;
-	max-width:750px;
+	max-width:790px;
 }
 
 #bcp-logo{
