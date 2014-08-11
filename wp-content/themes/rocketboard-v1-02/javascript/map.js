@@ -9,8 +9,6 @@ $(document).ready(function(){
 	mobile = ($(window).width() < 767);
 	
 	if(mobile){ $('#map').css('height', 'auto'); }
-	
-	console.log("MOBILE " + mobile);
 
 	$('#map-cta').click(function(){
 		if($('#map').css('display') == 'none'){

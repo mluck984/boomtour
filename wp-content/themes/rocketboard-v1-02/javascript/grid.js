@@ -3,7 +3,7 @@
 //0 - twitter
 //1 - music
 //2 - instagram
-var filters = [true,true,true];
+var filters = [true,true,true,true];
 var state = "all";
 
 $(document).ready(function(){
@@ -93,6 +93,7 @@ function strToIndex(string){
 	if(string == 'twitter') return 0;
 	if(string == 'music') return 1;
 	if(string == 'photo') return 2;
+	if(string == 'product') return 3;
 
 	return 0;
 	

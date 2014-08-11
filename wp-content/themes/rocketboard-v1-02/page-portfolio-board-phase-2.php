@@ -26,13 +26,14 @@ get_header(); ?>
                 <li id="all" class="filter" lat="41" long="-80" zoom="5" >All<span></span></li>
                 <li id="chicago" class="filter" lat="41.8819" long="-87.6278" zoom="8" >Chicago</li>
                 <li id="pittsburgh" lat="40.455367" long="-80" zoom="10" class="filter">Pittsburgh</li>
-                <li id="maryland" lat="39.191353" long="-76.889840" zoom="10" class="filter">Maryland</li>
                 <li id="washington" lat="38.905063" long="-77.028389" zoom="7" class="filter">Washington D.C.</li>
-                <li id="philadelphia" lat="39.943790" long="-75.185184" zoom="10" class="filter">Philadelphia</li>
+                <li id="maryland" lat="39.191353" long="-76.889840" zoom="10" class="filter">Baltimore</li>
                 <li id="brooklyn" lat="40.830336" long="-73.932584" zoom="9" class="filter">Brooklyn</li>
-                <li id="hartford" lat="41.769478" long="-72.682144" zoom="10" class="filter">Hartford</li>
                 <li id="boston" lat="42.154245" long="-71.224355" zoom="9" class="filter">Boston</li>
-                <li id="upstate" lat="42.130428," long="-75.874549" zoom="7" class="filter">Upstate</li>
+                <li id="hartford" lat="41.769478" long="-72.682144" zoom="10" class="filter">Hartford</li>
+                <li id="rhode" lat="41.826411" long="-71.413014" zoom="10" class="filter">Rhode Island</li>
+                <li id="philadelphia" lat="39.943790" long="-75.185184" zoom="10" class="filter">Philadelphia</li>
+                <li id="upstate" lat="42.130428," long="-75.874549" zoom="7" class="filter">Upstate, NY</li>
             </ul>
         </div>
         <div id="map-list">
@@ -65,8 +66,8 @@ get_header(); ?>
         	<li id="filter-by">Filter by</li>
            <!-- <li id="music" class="filter">Music<span></span></li>-->
 			<li id="all" class="filter">All<span></span></li>
-            <li id="photo" class="filter">Photos<span></span></li>
-        	<li id="social" class="filter">Social<span></span></li>
+            <li id="photo" class="filter">Instagram<span></span></li>
+        	<li id="social" class="filter">Twitter<span></span></li>
             <li id="product" class="filter">Products<span></span></li>
         </ul>
     </div>

@@ -120,7 +120,6 @@
     <script src="wp-content/themes/rocketboard-v1-02/javascript/leaflet.js"></script>
     <script src="wp-content/themes/rocketboard-v1-02/javascript/map.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/papaparse.min.js"></script>
-    <script src="wp-content/themes/rocketboard-v1-02/javascript/jquery.columnizer.js"></script>
 </head>
 
 <body <?php echo body_class(); ?>>
