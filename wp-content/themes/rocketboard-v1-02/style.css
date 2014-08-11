@@ -62,6 +62,10 @@ src: url('fonts/Brandon_bld.otf'),
 	url('fonts/Brandon_bld.eot') format('embedded-opentype');;
 }
 
+.header-container{
+	height:320px;
+}
+
 .header-video{
 	height:320px;
 	background: #e4047a url('images/Boomtour_HeaderStatic.jpg');
@@ -96,7 +100,7 @@ src: url('fonts/Brandon_bld.otf'),
 
 .header-text h3{
 	font-family: BrandonBold;
-	font-size:20px;
+	font-size:19px;
 	text-align:center;
 	margin: 15px auto 10px auto;
 	max-width:790px;
@@ -109,31 +113,113 @@ src: url('fonts/Brandon_bld.otf'),
 
 #map-cta{
 	font-family: BrandonBold;
-	text-align:center;
-	background-color:#fff;
-	
+	text-align: center;
+	text-transform: uppercase;
+	background-color: #fff;
+	color: #e4047a;
+	cursor:pointer;
+	margin: 0px 0px;
+	padding: 5px;
+}
+
+#map-cta.open{
+	padding: 0 5px;
+}
+
+#map-cta.closed{
+	padding: 5px;
+	position: relative;
+	top: 0px;
+	z-index: 1000;
+}
+
+#map-cta .cta-arrow{
+	margin:0 100px;
+}
+
+#map-cta .cta-arrow.mobile-arrow{
+	display:none;
+}
+#map-cta .cta-arrow.desktop-arrow{
+	display:inline
+}
+
+
+#map-container{
+	background-color:#00add3;
+	padding: 0 100px 0 100px;
+}
+
+#map{
+	height:400px;
+	display:none;
+}
+
+#map-list{
+	padding: 20px 10px;
+	display:none;
+}
+
+#map-list div{
+	color:#f9d319;
+	font-family:BrandonBold;
+	font-size:20px;
+	padding: 10px 0;
+	border-top: 1px solid #fff;
+}
+
+#map-list div span{
+	display:block;
+	float:left;
+	height:100px;
+	margin-right:20px;
+	width:110px;
+}
+
+.mobile-map{
+	width:100%;
+	height:auto;
+}
+
+.instagram-map-icon.leaflet-clickable{
+	border:4px solid #fff;
 }
 
 .grid-filters{
 	margin: 10px 0;
 }
 
-.grid-filters ul {
+.list-filters{
+	display:none;
+	margin: 20px 0 0 0;
+}
+
+.grid-filters ul, .list-filters ul {
     list-style-type: none;
     margin: 0 auto;
 	text-align:center;
     padding: 0;
 }
 
-.grid-filters ul li{
+.grid-filters ul li, .list-filters ul li{
     display:inline;
 	padding: 0 20px 0 20px;
-	font-size:30px;
+	font-size:28px;
 	text-transform:uppercase;
 	font-family: GiorgioSansBold;
 	border-left: 1px solid #e4047a;
 	color:#fff;
 	cursor:pointer;
+}
+
+.list-filters ul li{
+    border:none;
+	color:#fff;
+}
+
+.list-filters ul li.filter-off{
+    border:none;
+	color:#f9d319;
 }
 
 .grid-filters ul li#filter-by{
@@ -163,6 +249,9 @@ src: url('fonts/Brandon_bld.otf'),
 }
 
 
+.grid-filters ul #all span{
+	display:none;
+}
 .grid-filters ul #music span, .grid-item.music span{
 	background: url('images/boomtour_icons_sm_music.png');
 }
@@ -208,13 +297,13 @@ src: url('fonts/Brandon_bld.otf'),
 	color:#fff;
 }
 
-.grid-item.photo{
+.grid-item.photo, .grid-item.product{
 	padding:0;
 	width:290px;
 	height:270px;
 }
 
-.grid-item.photo span{
+.grid-item.photo span, .grid-item.product span{
 	top:10px;
 	left:86%;
 }
@@ -2145,8 +2234,10 @@ ul.rocket-board-order li:first-child{ border-top: 0px; }
 
 @media (max-width: 767px) {
 	.header-video{
-		height:300px;
 		margin-bottom:-300px;
+	}
+	div.gdl-page-item {
+		padding-top: 0px;
 	}
 	div.header-navigation-container {
 		margin: 50px 0px 270px 0px;
@@ -2154,6 +2245,36 @@ ul.rocket-board-order li:first-child{ border-top: 0px; }
 	.header-text h1{
 		font-size:40px;
 		width:360px;
+	}
+	
+	#map-cta{
+		margin: 0px;
+	}
+	
+	#map-cta .cta-arrow{
+		margin:0 15px;
+	}
+	
+	#map-cta #text{
+		display:block;
+	}
+	#map-cta .cta-arrow.mobile-arrow{
+		display:inline;
+	}
+	#map-cta .cta-arrow.desktop-arrow{
+		display:none;
+	}
+	
+	#map-container{
+		padding: 0;
+	}
+	
+	#map-list div{
+		padding: 15px 0;
+	}
+	
+	#map-list div span{
+		display:block;
 	}
 	
 	.grid-filters ul li{
@@ -2171,7 +2292,8 @@ ul.rocket-board-order li:first-child{ border-top: 0px; }
 	}
 	
 	.header-text h3{
-		margin-top:100px;
+		margin: 5px 0 5px 0;
+		font-size:15px;
 	}
 	
 	sup{
@@ -2191,6 +2313,9 @@ ul.rocket-board-order li:first-child{ border-top: 0px; }
 	.container.main{
 		max-width:700px !important;
 	}
+	#map-cta .cta-arrow{
+		margin:0 40px;
+	}
 }
 
 @media (min-width: 1040px) and (max-width: 1359px){
@@ -2206,15 +2331,28 @@ ul.rocket-board-order li:first-child{ border-top: 0px; }
 }
 
 @media (max-width: 420px) {
-	.grid-item, .grid-item.big, .grid-item.wide{
-		width:75%;
-	}
-	.grid-item.photo{
-		width:100%;
-	}
 	.header-text h1{
 		font-size:30px;
 		width:300px;
+	}
+	#map-list div span{
+		display:block;
+		float:none;
+		height: auto;
+		margin-right:20px;
+		margin-bottom:20px;
+		width:auto;
+	}
+	.grid-item, .grid-item.big, .grid-item.wide{
+		width:75%;
+		height:250px;
+	}
+	.grid-item.photo, .grid-item.product{
+		width:100%;
+		height:250px;
+	}
+	.grid-item.photo p {
+		bottom: -250px;
 	}
 	sup{
 		font-size:17px;

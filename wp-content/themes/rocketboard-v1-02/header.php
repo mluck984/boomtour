@@ -41,6 +41,8 @@
 	<link rel="stylesheet" href="wp-content/themes/rocketboard-v1-02/stylesheet/jquery-ui.min.css"/> 
     
 	<link rel="stylesheet" href="wp-content/themes/rocketboard-v1-02/stylesheet/bigvideo.css"/> 
+    
+	<link rel="stylesheet" href="wp-content/themes/rocketboard-v1-02/stylesheet/leaflet.css"/> 
 	
 
 	<?php global $gdl_is_responsive ?>
@@ -115,7 +117,10 @@
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/video.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/bigvideo.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script></script>
-
+    <script src="wp-content/themes/rocketboard-v1-02/javascript/leaflet.js"></script>
+    <script src="wp-content/themes/rocketboard-v1-02/javascript/map.js"></script>
+	<script src="wp-content/themes/rocketboard-v1-02/javascript/papaparse.min.js"></script>
+    <script src="wp-content/themes/rocketboard-v1-02/javascript/jquery.columnizer.js"></script>
 </head>
 
 <body <?php echo body_class(); ?>>
@@ -176,6 +181,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="body-outer-wrapper">
 	
+    <div class="header-container">
+    
     <div class="header-video">
 <!--        <video autoplay loop poster="polina.jpg" id="bgvid">
         <source src="wp-content/themes/rocketboard-v1-02/assets/road.mp4" type="video/mp4">
@@ -298,6 +305,8 @@ adventure across the U.S. of A! Join us for the road trip of the summer.</h3>
 		</div>
 
 	</div>
+    
+    </div>
 
 	<div class="body-wrapper boxed-style">
 

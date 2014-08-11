@@ -286,12 +286,16 @@
 
 	include_once($temp_root . 'include/plugin/dropdown-menus.php'); // Custom dropdown menu
 
-function array_sprinkle($parent, $child){
+function array_sprinkle($parent, $child, $even=true, $steps=1){
 	
-	if(count($child) > 0){
-		$ratio = count($parent) / count($child);
+	if($even){
+		if(count($child) > 0){
+			$ratio = count($parent) / count($child);
+		} else{
+			$ratio = 1;
+		}
 	} else{
-		$ratio = 1;
+		$ratio = $steps;
 	}
 	$slot = 0;
 	$i = 0;

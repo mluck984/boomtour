@@ -31,6 +31,7 @@ get_header(); ?>
     	<ul>
         	<li id="filter-by">Filter by</li>
            <!-- <li id="music" class="filter">Music<span></span></li>-->
+			<li id="all" class="filter">All<span></span></li>
             <li id="photo" class="filter">Photos<span></span></li>
         	<li id="social" class="filter">Social<span></span></li>
         </ul>

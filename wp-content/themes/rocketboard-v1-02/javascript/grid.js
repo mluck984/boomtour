@@ -13,7 +13,7 @@ $(document).ready(function(){
 		var index = strToIndex(type);
 		var delay = 0;
 		
-		if( (state == "all") || ( (state == "filtered") && (filters[index]==false)) ){
+		if( ( (state == "all") && (type != "all")) || ( (state == "filtered") && (type != "all") && (filters[index]==false)) ){
 			for(var i = 0; i < filters.length; i++){
 				if(i == index){
 					filters[i] = true;

@@ -18,19 +18,24 @@ $instagram = json_decode($json, true);
 
 $arr = $instagram['data'];
 
-foreach($arr as $pic){
-	$item = array(
-			'type' => 'photo',
-			'name' => $pic['user']['fullname'],
-			'user' => $pic['user']['username'],
-			'date' => $pic['created_at'],
-			'link' => $pic['link'],
-			'tags' => $pic['tags'],
-			'caption' => $pic['caption']['text'],
-			'thumbnail' => $pic['images']['low_resolution']['url'],
-			'image' => $pic['images']['standard_resolution']['url']
-		);
-	array_push($feedInstagram, $item);
+if($arr){
+	foreach($arr as $pic){
+		$item = array(
+				'type' => 'photo',
+				'name' => $pic['user']['fullname'],
+				'user' => $pic['user']['username'],
+				'date' => $pic['created_at'],
+				'link' => $pic['link'],
+				'tags' => $pic['tags'],
+				'caption' => $pic['caption']['text'],
+				'thumbnail' => $pic['images']['thumbnail']['url'],
+				'low_resolution' => $pic['images']['low_resolution']['url'],
+				'image' => $pic['images']['standard_resolution']['url'],
+				'lat' => $pic['location']['latitude'],
+				'long' => $pic['location']['longitude']
+			);
+		array_push($feedInstagram, $item);
+	}
 }
 
 ?>
