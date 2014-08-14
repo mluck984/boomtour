@@ -5,13 +5,25 @@
 //2 - instagram
 var filters = [true,true,true,true];
 var state = "all";
+var container;
+var msnry;
 
 $(document).ready(function(){
+	
+		
+	container = $('#grid');
+	// initialize
+	container.masonry({
+	  columnWidth: '.grid-sizer',
+	  itemSelector: '.grid-item'
+	});
+	
+	msnry = container.data('masonry');
+	setTimeout(function(){ msnry.layout(); }, 500);
 	
 	$('.grid-filters .filter').click(function(){
 		var type = $(this).attr('id');
 		var index = strToIndex(type);
-		var delay = 0;
 		
 		if( ( (state == "all") && (type != "all")) || ( (state == "filtered") && (type != "all") && (filters[index]==false)) ){
 			for(var i = 0; i < filters.length; i++){
@@ -22,16 +34,26 @@ $(document).ready(function(){
 				}
 			}
 			
-			$('#grid-container .grid-item').each(function(){
-				if($(this).hasClass(type)){
-					$(this).delay(delay).fadeIn("fast");
-				} else{
-					if(! $(this).hasClass('sweepstakes')){
-						$(this).delay(delay).fadeOut("fast");
-					}
+			var tileArr = msnry.getItemElements();
+			var hideArr = [];
+			var showArr = [];
+			
+			for(var i = 0; i < tileArr.length; i++){
+				var $element = $(tileArr[i]);
+				var tile = msnry.getItem(tileArr[i]);
+				
+				if($element.hasClass(type)){
+					showArr.push(tile);
+					//msnry.reveal(tile);
+				} else if(! $element.hasClass('sweepstakes')){
+					hideArr.push(tile);
+					//msnry.hide(tile);
 				}
-				delay += 10;
-			});
+			}
+			
+			msnry.hide(hideArr);
+			msnry.reveal(showArr);
+			setTimeout(function(){ msnry.layout(showArr, true); }, 700);
 			
 			$('.grid-filters ul li').each(function(){
 				if($(this).attr('id') == "filter-by") return true;
@@ -50,9 +72,18 @@ $(document).ready(function(){
 				filters[i] = true;
 			}
 			
-			$('#grid-container .grid-item').each(function(){
-				$(this).delay(delay).fadeIn("fast");
-			});
+			var tileArr = msnry.getItemElements();
+			var showArr = [];
+			
+			for(var i = 0; i < tileArr.length; i++){
+				var tile = msnry.getItem(tileArr[i]);
+				showArr.push(tile);
+			}
+			
+			msnry.hide(hideArr);
+			msnry.reveal(showArr);
+			setTimeout(function(){ msnry.layout(showArr, true); }, 700);
+			
 			
 			$('.grid-filters ul li').each(function(){
 				if($(this).attr('id') == "filter-by") return true;
@@ -63,6 +94,7 @@ $(document).ready(function(){
 			
 			state = "all";
 		}
+		
 	});
 	
 	
@@ -73,6 +105,15 @@ $(document).ready(function(){
 			verticalFit: false
 		}
 	});
+	
+	$('.grid-item.photo').hover(
+		function(){
+			$('p', this).fadeIn(200);
+		},
+		function(){
+			$('p', this).fadeOut(200);
+		}	
+	);
 	
 	
 });

@@ -18,6 +18,11 @@ $instagram = json_decode($json, true);
 
 $arr = $instagram['data'];
 
+$blacklist = array(
+		"http://instagram.com/p/rfy09cD3eu/",
+		"http://scontent-b.cdninstagram.com/hphotos-xap1/t51.2885-15/927405_744918015567498_1472371092_n.jpg"
+	);
+
 if($arr){
 	foreach($arr as $pic){
 		$item = array(
@@ -34,7 +39,10 @@ if($arr){
 				'lat' => $pic['location']['latitude'],
 				'long' => $pic['location']['longitude']
 			);
-		array_push($feedInstagram, $item);
+			
+		if( (! in_array($item['link'], $blacklist) ) && ( strpos(strtolower($item['caption']), '#boomchickapop') > -1 ) ){
+			array_push($feedInstagram, $item);
+		}
 	}
 }
 

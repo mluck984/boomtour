@@ -25,15 +25,22 @@ $json = $twitter->setGetfield($getfield)
 $tweets = json_decode($json, true);
 $list = $tweets['statuses'];
 
+$blacklist = array(
+		'497937362333499392'
+	);
+
 foreach($list as $tweet){
 	$item = array(
 			'type' => 'social',
 			'id' => $tweet['id_str'],
 			'user' => $tweet['user']['screen_name'],
+			'profile_image' => $tweet['user']['profile_image_url'],
 			'date' => $tweet['created_at'],
 			'text' => $tweet['text']
 		);
-	array_push($feedTweets, $item);
+	if(! in_array($item['id'], $blacklist)){
+		array_push($feedTweets, $item);
+	}
 }
 
 
@@ -58,7 +65,9 @@ foreach($list as $tweet){
 			'date' => $tweet['created_at'],
 			'text' => $tweet['text']
 		);
-	array_push($feedMusic, $item);
+	if(! in_array($item['id'], $blacklist)){
+		array_push($feedMusic, $item);
+	}
 }*/
 
 
