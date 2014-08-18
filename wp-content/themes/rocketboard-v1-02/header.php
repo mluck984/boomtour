@@ -119,7 +119,10 @@
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script></script>
     <script src="wp-content/themes/rocketboard-v1-02/javascript/leaflet.js"></script>
     <script src="wp-content/themes/rocketboard-v1-02/javascript/map.js"></script>
-	<script src="wp-content/themes/rocketboard-v1-02/javascript/papaparse.min.js"></script>
+	<script src="wp-content/themes/rocketboard-v1-02/javascript/papaparse.min.js">
+    </script>
+	<script src="wp-content/themes/rocketboard-v1-02/javascript/jquery.cookie.js">
+    </script>
 </head>
 
 <body <?php echo body_class(); ?>>

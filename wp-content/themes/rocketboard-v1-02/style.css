@@ -185,6 +185,10 @@ src: url('fonts/Brandon_bld.otf'),
 	border:4px solid #fff;
 }
 
+#preload{
+	display:none;
+}
+
 #grid{
 	max-width:1200px;
 	margin:0 auto;
@@ -312,12 +316,27 @@ src: url('fonts/Brandon_bld.otf'),
 	display:none;
 }
 
-.grid-item.poll p{
-	position:initial;
+.grid-item.poll{
+	background-color:#36a0d8;
 }
 
-.grid-item.poll tile-content{
-	
+.grid-item.poll img{
+	position:initial;
+	top:0;
+	left:0;
+	z-index:-100;
+}
+
+.grid-item.poll p{
+	position:initial;
+	padding:0;
+}
+
+.grid-item.poll .tile-content{
+	position:absolute;
+	top:25px;
+	padding:20px 30px;
+	width:80%;
 }
 
 .grid-item.poll ul{
@@ -326,6 +345,46 @@ src: url('fonts/Brandon_bld.otf'),
 	text-align:left;
 	line-height:1.5em;
 }
+
+.grid-item.poll .answers li{
+	padding:2px 0 2px 34px;
+	margin: 5px 0 5px 0;
+	background:url('images/check-off.png') 0px 0px no-repeat;
+	cursor:pointer;
+}
+
+.grid-item.poll .results li{
+	padding:2px 0 2px 0px;
+	margin: 5px 0 5px 0;
+	background:url('images/poll-result-bar.png') no-repeat;
+}
+
+.grid-item.poll .results div{
+	position:initial;
+	float:left;
+	width:40px;
+	margin: 0 0px 0 5px;
+	background:none;
+}
+
+.grid-item.poll .results div.answer-text{
+	margin: 0 0px 0 50px;
+	width:auto;
+	float:none;
+}
+
+.grid-item.poll .answers li:hover{
+	background:url('images/check-on.png') 0px 0px no-repeat;
+}
+
+.grid-item.music iframe{
+	width:100%;
+}
+
+.grid-item.music .music-header{
+	position:initial;
+}
+
 
 .grid-item.big, .grid-item.wide{
 	width:47%;
@@ -2377,7 +2436,23 @@ ul.rocket-board-order li:first-child{ border-top: 0px; }
 	.grid-item.big, .grid-item.wide{
 		width:95.5%;
 	}
+	
+	.grid-item.social p{
+		font-size:13px;
+	}
 	sup{
 		font-size:17px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.grid-item.poll img{
+		position:absolute;
+	}
+
+	.grid-item.poll .tile-content{
+		position:initial;
+		padding:20px 30px;
+		width:80%;
 	}
 }

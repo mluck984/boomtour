@@ -297,6 +297,7 @@ function array_sprinkle($parent, $child, $even=true, $steps=1){
 	} else{
 		$ratio = $steps;
 	}
+
 	$slot = 0;
 	$i = 0;
 	

@@ -13,8 +13,22 @@ $settings = array(
 );
 
 /** Note: Set the GET field BEFORE calling buildOauth(); **/
+
+$blacklist = array(
+		'497937362333499392',
+	);
+	
+$blacklist_users = array(
+		'twitgdine'
+	);
+
 $url = 'https://api.twitter.com/1.1/search/tweets.json';
-$getfield = '?q=%23boomchickapop%20OR%20%23boomtour&count=100';
+$getfield = '?q=%23boomchickapop%20OR%20%23boomtour';
+foreach($blacklist_users as $user){
+	$getfield .= "%20-" . $user;
+}
+$getfield .="&count=100";
+
 $requestMethod = 'GET';
 $twitter = new TwitterAPIExchange($settings);
 
@@ -25,10 +39,6 @@ $json = $twitter->setGetfield($getfield)
 $tweets = json_decode($json, true);
 $list = $tweets['statuses'];
 
-$blacklist = array(
-		'497937362333499392'
-	);
-
 foreach($list as $tweet){
 	$item = array(
 			'type' => 'social',
@@ -38,7 +48,7 @@ foreach($list as $tweet){
 			'date' => $tweet['created_at'],
 			'text' => $tweet['text']
 		);
-	if(! in_array($item['id'], $blacklist)){
+	if( (! in_array($item['id'], $blacklist)) && (! in_array($item['user'], $blacklist)) ){
 		array_push($feedTweets, $item);
 	}
 }

@@ -47,4 +47,8 @@
 <file name="Mobile_Map.png" server="s179449.gridserver.com/domains/dev.frwdco.com/html/angies/boomtour/" local="130522493372412898" remote="130522422000000000" />
 <file name="tile_social.png" server="s179449.gridserver.com/domains/dev.frwdco.com/html/angies/boomtour/" local="130523436290146166" remote="130523364000000000" />
 <file name="tile_poll.png" server="s179449.gridserver.com/domains/dev.frwdco.com/html/angies/boomtour/" local="130525006954410178" remote="130524942000000000" />
+<file name="check-off.png" server="s179449.gridserver.com/domains/dev.frwdco.com/html/angies/boomtour/" local="130525074593384174" remote="130525002600000000" />
+<file name="poll-check.png" server="s179449.gridserver.com/domains/dev.frwdco.com/html/angies/boomtour/" local="130525146671979049" remote="130525080000000000" />
+<file name="check-on.png" server="s179449.gridserver.com/domains/dev.frwdco.com/html/angies/boomtour/" local="130525157309507481" remote="130525085400000000" />
+<file name="poll-result-bar.png" server="s179449.gridserver.com/domains/dev.frwdco.com/html/angies/boomtour/" local="130525162658099043" remote="130525098000000000" />
 </dwsync>

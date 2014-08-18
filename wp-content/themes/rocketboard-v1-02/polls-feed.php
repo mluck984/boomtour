@@ -1,9 +1,8 @@
 <?php
 
-$ip = $_SERVER['REMOTE_ADDR'];
 $feedPolls = array();
 
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 0,
 		'question' => '8 hour road trip, only one genre of music.',
@@ -17,7 +16,7 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 1,
 		'question' => 'You&rsquo;re stranded on a deserted island. You can only have one flavor of BOOM? Which one is it?',
@@ -29,7 +28,7 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 2,
 		'question' => 'New flavor of BOOM coming out, which would you try first?',
@@ -43,7 +42,7 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 3,
 		'question' => 'Where would you rather watch your favorite flick?',
@@ -55,7 +54,7 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 4,
 		'question' => 'You have a week vacation with your friends.',
@@ -67,7 +66,7 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 5,
 		'question' => 'You&rsquo;re going on vacation, all expenses paid. Where would you go?',
@@ -81,7 +80,7 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 6,
 		'question' => 'Man, we hate being stuck in traffic. Would you rather be able to fly or teleport?',
@@ -93,7 +92,7 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 7,
 		'question' => 'There&rsquo;s a new Hollywood drama. You:',
@@ -106,7 +105,7 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
-array_push($feedProducts, array(
+array_push($feedPolls, array(
 		'type' => 'poll',
 		'id' => 8,
 		'question' => 'For one million dollars, I would:',
@@ -120,6 +119,19 @@ array_push($feedProducts, array(
 		'answered' => false
 		));
 		
+array_push($feedPolls, array(
+		'type' => 'poll',
+		'id' => 9,
+		'question' => 'Superpower of choice?',
+		'answers' => array(
+			'Hulk-like strength',
+			'Mind Reading',
+			'Ability to make BOOM appear whenever you want it'
+			),
+		'results' => array(0,0,0),
+		'answered' => false
+		));
+		
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 $query = "SELECT * FROM poll_answers";
@@ -130,9 +142,20 @@ $sql->bind_result($answer_id, $poll_id, $answer, $user_ip, $user_ip_forward)  or
 
 while ($sql->fetch())
 {
-	$poll = $feedPolls[$poll_id];
-	$poll['results'][$answer]++;
-	if(($user_ip == $_SERVER['REMOTE_ADDR']) || ($user_ip_forward == $_SERVER['HTTP_X_FORWARDED_FOR'])){
-		$poll['answered'] = true;
+	$feedPolls[$poll_id]['results'][$answer]++;
+}
+
+$mysqli->close();
+
+
+$answeredArr = array();
+
+if(isset($_COOKIE['boomtour-polls'])){
+	$answeredArr = explode(',', $_COOKIE['boomtour-polls']);
+}
+
+for($i = 0; $i < count($feedPolls); $i++){
+	if(in_array($i, $answeredArr)){
+		$feedPolls[$i]['answered'] = true;
 	}
 }

@@ -13,12 +13,16 @@ require_once 'instagram-feed.php';
 
 require_once 'product-feed.php';
 
-//require_once 'polls-feed.php';
+require_once 'polls-feed.php';
 
 
 get_header(); ?>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwOnAPNVy7G2ygx0Ju2lMPGzy3IAAmWfw"></script>
+    
+    <div id="preload">
+    	<img src="wp-content/themes/rocketboard-v1-02/images/check-on.png"  />
+    </div>
     
 	<div id="map-container">
     	<div id="map">
@@ -57,9 +61,8 @@ get_header(); ?>
 	
 	//$grid = array_sprinkle($grid, $feedMusic);
 	$grid = array_sprinkle($grid, $feedInstagram);
-	//$grid = array_sprinkle($grid, $feedPolls);
+	$grid = array_sprinkle($grid, $feedPolls);
 	$grid = array_sprinkle($grid, $feedProducts, false, 3);
-	
 	?>
     
     <div id="grid-container" class="gdl-page-item mb20 twelve columns">
@@ -71,6 +74,7 @@ get_header(); ?>
 			<li id="all" class="filter">All<span></span></li>
             <li id="photo" class="filter">Instagram<span></span></li>
         	<li id="social" class="filter">Twitter<span></span></li>
+            <li id="poll" class="filter">Polls<span></span></li>
             <li id="product" class="filter">Products<span></span></li>
         </ul>
     </div>
@@ -89,6 +93,14 @@ get_header(); ?>
         
         </div>
         </a>
+        
+        <?php if(0 == 1) : ?>
+            <div class="grid-item big music">
+                <p class="music-header">Boom Tour Setlist</p>
+    <iframe width="400" height="300" src="//www.youtube.com/embed/videoseries?&list=PL20IFslWFIl01d7PddGO3fnqJQCMNJPE1&rel=0" frameborder="0"></iframe>
+                <div><span></span></div>       
+            </div>
+        <?php endif; ?>
         
         <?php
         foreach($grid as $item) : ?>
@@ -129,18 +141,34 @@ get_header(); ?>
             <?php endif; ?>
             
             <?php if($item['type'] == "poll") : ?>
+            	<?php 
+				$sum = array_sum($item['results']); 
+				if($sum == 0){ $sum = 1; }
+				?>
                 <div class="grid-item <?php echo $item['type'] ?> wide" >
 					<img src="wp-content/themes/rocketboard-v1-02/images/tile_<?php echo $item['type'] ?>.png" />
                     <div><span></span></div>
                     <div class="tile-content">
                         <p><?php echo $item['question'] ?></p>
-                        <?php if(! $item['answered']) : ?>
-                            <ul class="answer">
+                        <?php if($item['answered'] == false) : ?>
+                            <ul class="answers" poll="<?php echo $item['id'] ?>" sum="<?php echo $sum ?>">
+                            <?php $i = 0; ?>
                             <?php foreach($item['answers'] as $answer) : ?>
-                                <li><?php echo $answer ?></li>
+                                <li answer="<?php echo $i; ?>" result="<?php echo  $item['results'][$i] ?>"><?php echo $answer ?></li>
+                                <?php $i++; ?>
                             <?php endforeach; ?>
                             </ul>
                         <?php else: ?>
+                            <ul class="results">
+                            <?php $i = 0; ?>                           
+                            <?php foreach($item['answers'] as $answer) : 
+								$width = 100 * ($item['results'][$i] / $sum);	
+								$percentage = floor($width) . "%";						
+							?>
+                                <li answer="<?php echo $i; ?>" style="background-size: <?php echo $width ?>% 100%" ><div><?php echo $percentage; ?></div><div class="answer-text"><?php echo $answer ?></div></li>
+                                <?php $i++; ?>
+                            <?php endforeach; ?>
+                            </ul>
                         <?php endif; ?>
                     </div>
                 </div>
