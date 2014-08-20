@@ -34,7 +34,7 @@
 
   ================================================== -->
 
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" />
 
 	<link rel="stylesheet" href="wp-content/themes/rocketboard-v1-02/stylesheet/magnific-popup.css"/>
     
@@ -118,6 +118,7 @@
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/bigvideo.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script></script>
     <script src="wp-content/themes/rocketboard-v1-02/javascript/leaflet.js"></script>
+	<script src="wp-content/themes/rocketboard-v1-02/javascript/swfobject.js"></script>
     <script src="wp-content/themes/rocketboard-v1-02/javascript/map.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/papaparse.min.js">
     </script>

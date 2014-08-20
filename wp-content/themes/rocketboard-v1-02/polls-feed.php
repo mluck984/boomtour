@@ -150,8 +150,10 @@ $mysqli->close();
 
 $answeredArr = array();
 
-if(isset($_COOKIE['boomtour-polls'])){
-	$answeredArr = explode(',', $_COOKIE['boomtour-polls']);
+session_start();
+
+if(isset($_SESSION['answered'])){
+	$answeredArr = explode(',', $_SESSION['answered']);
 }
 
 for($i = 0; $i < count($feedPolls); $i++){

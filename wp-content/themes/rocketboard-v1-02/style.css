@@ -68,7 +68,7 @@ src: url('fonts/Brandon_bld.otf'),
 
 .header-video{
 	height:320px;
-	background: #e4047a url('images/Boomtour_HeaderStatic.jpg');
+	background: #e4047a url('images/Boomtour_HeaderStatic_b.jpg');
 	background-size: cover;
 	margin-bottom:-320px;
 	overflow:hidden;
@@ -195,7 +195,7 @@ src: url('fonts/Brandon_bld.otf'),
 }
 
 .grid-filters{
-	margin: 10px 0;
+	margin: 10px auto;
 }
 
 .list-filters{
@@ -295,7 +295,6 @@ src: url('fonts/Brandon_bld.otf'),
 	background-position:-32px 0 !important;
 }
 
-
 .grid-item{
 	width: 22%;
 	margin: .6125%;
@@ -377,13 +376,18 @@ src: url('fonts/Brandon_bld.otf'),
 	background:url('images/check-on.png') 0px 0px no-repeat;
 }
 
-.grid-item.music iframe{
-	width:100%;
-}
-
 .grid-item.music .music-header{
 	position:initial;
 }
+
+.grid-item.music object{
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:72%;
+	height:100%;
+}
+
 
 
 .grid-item.big, .grid-item.wide{
@@ -2454,5 +2458,11 @@ ul.rocket-board-order li:first-child{ border-top: 0px; }
 		position:initial;
 		padding:20px 30px;
 		width:80%;
+	}
+}
+
+@media (max-width: 1360px) {
+	.grid-filters {
+		max-width: 690px;
 	}
 }

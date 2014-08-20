@@ -7,10 +7,19 @@ var filters = [true,true,true,true,true];
 var state = "all";
 var container;
 var msnry;
+var flash = false;
 
 $(document).ready(function(){
-	
+		
 	initGrid();
+	
+	if(swfobject.getFlashPlayerVersion().major == 0){
+		flash = false;
+		$(".grid-item.music").hide();
+		$(".grid-filters #music").hide();
+	} else{
+		flash = true;
+	}
 	
 });
 
@@ -46,7 +55,7 @@ function initGrid(){
 			for(var i = 0; i < tileArr.length; i++){
 				var $element = $(tileArr[i]);
 				var tile = msnry.getItem(tileArr[i]);
-				
+
 				if($element.hasClass(type)){
 					showArr.push(tile);
 					//msnry.reveal(tile);
@@ -81,8 +90,15 @@ function initGrid(){
 			var showArr = [];
 			
 			for(var i = 0; i < tileArr.length; i++){
+				var $element = $(tileArr[i]);
 				var tile = msnry.getItem(tileArr[i]);
-				showArr.push(tile);
+				if(! $element.hasClass("music")){
+					showArr.push(tile);
+				} else{
+					if(flash){
+						showArr.push(tile);
+					}
+				}
 			}
 			
 			msnry.hide(hideArr);
@@ -160,18 +176,20 @@ function initGrid(){
 		console.log(str);
 		$.cookie("boomtour-polls", str, { expires: 30 });
 	});
+	
+	console.log("DECODE " + decodeURI($.cookie("boomtour-polls")));
 }
 
 $(function() {
-	/*if( screen.width > 640 ) {
+	if( screen.width > 640 ) {
 		var BV = new $.BigVideo({container: $('.header-video'), doLoop: true, useFlashForFirefox:false});
 		BV.init();
 		if ($.browser.mozilla) {
-			BV.show('wp-content/themes/rocketboard-v1-02/assets/LessBlack.ogv',{ambient:true});
+			BV.show('wp-content/themes/rocketboard-v1-02/assets/BoomTour_NewVid_1.ogv',{ambient:true});
 		} else{
-			BV.show('wp-content/themes/rocketboard-v1-02/assets/LessBlack.mp4',{ambient:true});
+			BV.show('wp-content/themes/rocketboard-v1-02/assets/BoomTour_NewVid_1.mp4',{ambient:true});
 		}
-	}*/
+	}
 });
 
 function strToIndex(string){

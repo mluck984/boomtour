@@ -1,6 +1,14 @@
 <?php
 require_once '../../../wp-config.php';
 
+session_start();
+
+$answered = array();
+
+if(isset($_SESSION['answered'])){
+	$answered = explode(",", $_SESSION['answered']);
+}
+
 if($_SERVER['REMOTE_ADDR']){
 	$ip = $_SERVER['REMOTE_ADDR'];
 } else{
@@ -24,5 +32,8 @@ if ( (isset($_GET['p'])) && (isset($_GET['a'])) ){
 	$mysqli->close();
 
 }
+
+array_push($answered, $_GET['p']);
+$_SESSION['answered'] = implode(",", $answered);
 
 ?>

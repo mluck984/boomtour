@@ -48,7 +48,7 @@ get_header(); ?>
         
     <div id="map-cta" class="closed">
         <span class="cta-arrow desktop-arrow">&#x25BC;</span>
-        <span id="text">See where we're bringing the BOOM.</span>
+        <span id="text">CLICK HERE TO VIEW BOOM TOUR™ MAP</span>
         <span class="cta-arrow">&#x25BC;</span>
         <span class="cta-arrow mobile-arrow">&#x25BC;</span>
     </div>
@@ -72,6 +72,7 @@ get_header(); ?>
         	<li id="filter-by">Filter by</li>
            <!-- <li id="music" class="filter">Music<span></span></li>-->
 			<li id="all" class="filter">All<span></span></li>
+            <li id="music" class="filter">Music<span></span></li>
             <li id="photo" class="filter">Instagram<span></span></li>
         	<li id="social" class="filter">Twitter<span></span></li>
             <li id="poll" class="filter">Polls<span></span></li>
@@ -94,13 +95,11 @@ get_header(); ?>
         </div>
         </a>
         
-        <?php if(0 == 1) : ?>
-            <div class="grid-item big music">
-                <p class="music-header">Boom Tour Setlist</p>
-    <iframe width="400" height="300" src="//www.youtube.com/embed/videoseries?&list=PL20IFslWFIl01d7PddGO3fnqJQCMNJPE1&rel=0" frameborder="0"></iframe>
-                <div><span></span></div>       
-            </div>
-        <?php endif; ?>
+        <div class="grid-item big music">
+            <img src="wp-content/themes/rocketboard-v1-02/images/BoomTourSetlist.jpg" />
+<object width="250" height="250" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsPlaylist10022749652" name="gsPlaylist10022749652"><param name="movie" value="http://grooveshark.com/widget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&playlistID=100227496&p=0&bbg=000000&bth=000000&pfg=000000&lfg=000000&bt=FFFFFF&pbg=FFFFFF&pfgh=FFFFFF&si=FFFFFF&lbg=FFFFFF&lfgh=FFFFFF&sb=FFFFFF&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666" /><object type="application/x-shockwave-flash" data="http://grooveshark.com/widget.swf" width="250" height="250"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&playlistID=100227496&p=0&bbg=000000&bth=000000&pfg=000000&lfg=000000&bt=FFFFFF&pbg=FFFFFF&pfgh=FFFFFF&si=FFFFFF&lbg=FFFFFF&lfgh=FFFFFF&sb=FFFFFF&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666" /><span><a href="http://grooveshark.com/search/playlist?q=Boom%20Tour%20Angies%20Boomchickapop" title="Boom Tour by Angies Boomchickapop on Grooveshark">Boom Tour by Angies Boomchickapop on Grooveshark</a></span></object></object>
+            <div><span></span></div>       
+        </div>
         
         <?php
         foreach($grid as $item) : ?>
@@ -141,10 +140,7 @@ get_header(); ?>
             <?php endif; ?>
             
             <?php if($item['type'] == "poll") : ?>
-            	<?php 
-				$sum = array_sum($item['results']); 
-				if($sum == 0){ $sum = 1; }
-				?>
+            	<?php $sum = array_sum($item['results']); ?>
                 <div class="grid-item <?php echo $item['type'] ?> wide" >
 					<img src="wp-content/themes/rocketboard-v1-02/images/tile_<?php echo $item['type'] ?>.png" />
                     <div><span></span></div>

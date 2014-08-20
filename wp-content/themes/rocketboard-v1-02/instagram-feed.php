@@ -20,7 +20,11 @@ $arr = $instagram['data'];
 
 $blacklist = array(
 		"http://instagram.com/p/rfy09cD3eu/",
-		"http://scontent-b.cdninstagram.com/hphotos-xap1/t51.2885-15/927405_744918015567498_1472371092_n.jpg"
+		"http://scontent-b.cdninstagram.com/hphotos-xap1/t51.2885-15/927405_744918015567498_1472371092_n.jpg",
+	);
+
+$blacklist_users = array(
+		'bdealux'
 	);
 
 if($arr){
@@ -40,7 +44,7 @@ if($arr){
 				'long' => $pic['location']['longitude']
 			);
 			
-		if( (! in_array($item['link'], $blacklist) ) && ( strpos(strtolower($item['caption']), '#boomchickapop') > -1 ) ){
+		if( (! in_array($item['link'], $blacklist) ) && (! in_array($item['user'], $blacklist_users)) && ( strpos(strtolower($item['caption']), '#boomchickapop') > -1 ) ){
 			array_push($feedInstagram, $item);
 		}
 	}
