@@ -172,7 +172,7 @@ download: true, complete: function(results, file) {
 		$('#map-list').slideDown(600);
 
 		$('.list-filters').slideDown(600);
-		$('.list-filters #chicago').trigger('click', [true]);
+		$('.list-filters #washington').trigger('click', [true]);
 		
 		if(! mobile){
 			$('.grid-item.photo').each(function(){
