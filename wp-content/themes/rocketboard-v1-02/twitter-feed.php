@@ -19,7 +19,8 @@ $blacklist = array(
 	);
 	
 $blacklist_users = array(
-		'twitgdine'
+		'twitgdine',
+		'DAStillBaxter'
 	);
 
 $url = 'https://api.twitter.com/1.1/search/tweets.json';

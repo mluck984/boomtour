@@ -16,7 +16,11 @@ $blacklist_users = array(
 		'boomchampions',
 		'tylerstyler',
 		'boomstationlive',
-		'snypa718'
+		'snypa718',
+		'energysquadintl',
+		'kristen_rocco',
+		'shirleyho__',
+		'natemichaelis'
 	);
 
 $feedInstagram = array();

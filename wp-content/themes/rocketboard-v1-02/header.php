@@ -124,6 +124,8 @@
     </script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/jquery.cookie.js">
     </script>
+	<script src="wp-content/themes/rocketboard-v1-02/javascript/c2runtime.js">
+    </script>
 </head>
 
 <body <?php echo body_class(); ?>>

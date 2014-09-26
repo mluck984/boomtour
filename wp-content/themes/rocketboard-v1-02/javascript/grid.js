@@ -21,6 +21,21 @@ $(document).ready(function(){
 		flash = true;
 	}
 	
+	//GAME
+	if ( navigator.userAgent.match(/(iPod|iPhone|iPad)/i)) {
+		$('#tictactoe').click(function(){
+			var $newWindow = window.open("tictactoe/");
+
+		});
+	} else{
+		$('#tictactoe').magnificPopup({
+			items: {
+			  src: '<div class="mfp-close"></div><iframe src="tictactoe/" width="320" height="480"></iframe>',
+			  type: 'inline',
+			}
+		});
+	}
+	
 });
 
 function initGrid(){
@@ -176,10 +191,11 @@ function initGrid(){
 		console.log(str);
 		$.cookie("boomtour-polls", str, { expires: 30 });
 	});
-	
-	console.log("DECODE " + decodeURI($.cookie("boomtour-polls")));
 }
 
+
+
+//MOBILE
 $(function() {
 	if( screen.width > 640 ) {
 		var BV = new $.BigVideo({container: $('.header-video'), doLoop: true, useFlashForFirefox:false});

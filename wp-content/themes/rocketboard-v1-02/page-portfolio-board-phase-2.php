@@ -7,7 +7,7 @@
  */
 
 
-require_once 'twitter-feed.php';
+//require_once 'twitter-feed.php';
 
 require_once 'instagram-feed.php';
 
@@ -52,15 +52,15 @@ get_header(); ?>
         <span class="cta-arrow">&#x25BC;</span>
         <span class="cta-arrow mobile-arrow">&#x25BC;</span>
     </div>
-
+    
 	<?php
 	
 	$grid = array();
 	
-	$grid = array_merge($grid, $feedTweets);
+	//$grid = array_merge($grid, $feedTweets);
 	
-	//$grid = array_sprinkle($grid, $feedMusic);
-	$grid = array_sprinkle($grid, $feedInstagram);
+	$grid = array_merge($grid, $feedInstagram);
+	//$grid = array_sprinkle($grid, $feedInstagram);
 	$grid = array_sprinkle($grid, $feedPolls);
 	$grid = array_sprinkle($grid, $feedProducts, false, 3);
 	?>
@@ -70,12 +70,12 @@ get_header(); ?>
     <div class="grid-filters">
     	<ul>
         	<li id="filter-by">Filter by</li>
-           <!-- <li id="music" class="filter">Music<span></span></li>-->
 			<li id="all" class="filter">All<span></span></li>
             <li id="music" class="filter">Music<span></span></li>
             <li id="photo" class="filter">Instagram<span></span></li>
-        	<li id="social" class="filter">Twitter<span></span></li>
+        	<!--<li id="social" class="filter">Twitter<span></span></li>-->
             <li id="poll" class="filter">Polls<span></span></li>
+            <li id="game" class="filter">Games<span></span></li>
             <li id="product" class="filter">Products<span></span></li>
         </ul>
     </div>
@@ -99,6 +99,11 @@ get_header(); ?>
             <img src="wp-content/themes/rocketboard-v1-02/images/BoomTourSetlist.jpg" />
 <object width="250" height="250" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsPlaylist10022749652" name="gsPlaylist10022749652"><param name="movie" value="http://grooveshark.com/widget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&playlistID=100227496&p=0&bbg=000000&bth=000000&pfg=000000&lfg=000000&bt=FFFFFF&pbg=FFFFFF&pfgh=FFFFFF&si=FFFFFF&lbg=FFFFFF&lfgh=FFFFFF&sb=FFFFFF&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666" /><object type="application/x-shockwave-flash" data="http://grooveshark.com/widget.swf" width="250" height="250"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&playlistID=100227496&p=0&bbg=000000&bth=000000&pfg=000000&lfg=000000&bt=FFFFFF&pbg=FFFFFF&pfgh=FFFFFF&si=FFFFFF&lbg=FFFFFF&lfgh=FFFFFF&sb=FFFFFF&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666" /><span><a href="http://grooveshark.com/search/playlist?q=Boom%20Tour%20Angies%20Boomchickapop" title="Boom Tour by Angies Boomchickapop on Grooveshark">Boom Tour by Angies Boomchickapop on Grooveshark</a></span></object></object>
             <div><span></span></div>       
+        </div>
+        
+        <div id="tictactoe" class="grid-item game"> 
+        	<img src="wp-content/themes/rocketboard-v1-02/images/tictactoe.jpg"  />
+            <div><span></span></div>
         </div>
         
         <?php
