@@ -325,4 +325,158 @@ function trimCaption($str){
 	return $str;
 }
 
+function add_new_intervals($schedules) 
+{
+	// add weekly and monthly intervals
+	$schedules['quarterly'] = array(
+		'interval' => 900,
+		'display' => __('Once Every 15 Minutes')
+	);
+	return $schedules;
+}
+add_filter( 'cron_schedules', 'add_new_intervals');
+
+add_action( 'wp', 'prefix_setup_schedule' );
+/**
+ * On an early action hook, check if the hook is scheduled - if not, schedule it.
+ */
+function prefix_setup_schedule() {
+	if ( ! wp_next_scheduled( 'prefix_quarterly_event' ) ) {
+		wp_schedule_event( time(), 'quarterly', 'prefix_quarterly_event');
+	}
+}
+
+
+add_action( 'prefix_quarterly_event', 'prefix_do_this_quarterly' );
+/**
+ * On the scheduled action hook, run a function.
+ */
+function prefix_do_this_quarterly() {
+	
+	
+	$blacklist = array(
+			"http://instagram.com/p/rfy09cD3eu/",
+			"http://scontent-b.cdninstagram.com/hphotos-xap1/t51.2885-15/927405_744918015567498_1472371092_n.jpg",
+		);
+	
+	$blacklist_users = array(
+			'bdealux',
+			'danigoalie92',
+			'roozapalooza',
+			'roniongpogi13',
+			'collectivephotography_',
+			'boomfelazi',
+			'boomchampions',
+			'tylerstyler',
+			'boomstationlive',
+			'snypa718',
+			'energysquadintl',
+			'kristen_rocco',
+			'shirleyho__',
+			'natemichaelis',
+			'bigg_burd'
+		);
+	
+	$feedInstagram = array();
+	
+	$url = 'https://api.instagram.com/v1/tags/boomchickapop/media/recent';
+	
+	$options = array( 
+		CURLOPT_URL => $url . '?client_id=1a571293f3fe4e5284bb70659cad7d66',
+		CURLOPT_RETURNTRANSFER => true
+	);
+	
+	$feed = curl_init();
+	curl_setopt_array($feed, $options);
+	$json = curl_exec($feed);
+	curl_close($feed);
+					
+	$instagram = json_decode($json, true);
+	
+	$arr = $instagram['data'];
+	
+	if($arr){
+		foreach($arr as $pic){
+			$item = array(
+					'type' => 'photo',
+					'user' => $pic['user']['username'],
+					'date' => $pic['created_at'],
+					'link' => $pic['link'],
+					'caption' => $pic['caption']['text'],
+					'thumbnail' => $pic['images']['thumbnail']['url'],
+					'low_resolution' => $pic['images']['low_resolution']['url'],
+					'image' => $pic['images']['standard_resolution']['url'],
+					'lat' => $pic['location']['latitude'],
+					'long' => $pic['location']['longitude']
+				);
+				
+			if( (! in_array($item['link'], $blacklist) ) && (! in_array($item['user'], $blacklist_users)) && ( strpos(strtolower($item['caption']), '#boomchickapop') > -1 ) ){
+				array_push($feedInstagram, $item);
+			}
+		}
+	}
+	
+	$url = 'https://api.instagram.com/v1/tags/boomtour/media/recent';
+	
+	$options = array( 
+		CURLOPT_URL => $url . '?client_id=1a571293f3fe4e5284bb70659cad7d66',
+		CURLOPT_RETURNTRANSFER => true
+	);
+	
+	$feed = curl_init();
+	curl_setopt_array($feed, $options);
+	$json = curl_exec($feed);
+	curl_close($feed);
+					
+	$instagram = json_decode($json, true);
+	
+	$arr = $instagram['data'];
+	
+	if($arr){
+		foreach($arr as $pic){
+			$item = array(
+					'type' => 'photo',
+					'user' => $pic['user']['username'],
+					'date' => $pic['created_at'],
+					'link' => $pic['link'],
+					'caption' => $pic['caption']['text'],
+					'thumbnail' => $pic['images']['thumbnail']['url'],
+					'low_resolution' => $pic['images']['low_resolution']['url'],
+					'image' => $pic['images']['standard_resolution']['url'],
+					'lat' => $pic['location']['latitude'],
+					'long' => $pic['location']['longitude']
+				);
+				
+			if( (! in_array($item['link'], $blacklist) ) && (! in_array($item['user'], $blacklist_users)) && ( strpos(strtolower($item['caption']), '#boomtour') > -1 ) ){
+				array_push($feedInstagram, $item);
+			}
+		}
+	}
+	
+	$list = array();
+	$d = ';';
+	
+	foreach($feedInstagram as $it){
+		$line = $it['type'] . $d .
+			$it['user'] . $d .
+			$it['date'] . $d .
+			$it['link'] . $d .
+			$it['caption'] . $d .
+			$it['thumbnail'] . $d .
+			$it['low_resolution'] . $d .
+			$it['image'] . $d .
+			$it['lat'] . $d .
+			$it['long'];
+		array_push($list, $line);
+	}
+	
+	$file = fopen('wp-content/themes/rocketboard-v1-02/feeds/caches/instagram.csv','w');
+	
+	foreach ($list as $line) {
+		fputcsv($file,explode($d,$line), $d);
+	}
+	
+	fclose($file);
+
+}
 ?>

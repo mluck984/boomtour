@@ -267,7 +267,7 @@ src: url('fonts/Brandon_bld.otf'),
 .grid-filters ul #music span, .grid-item.music span{
 	background: url('images/boomtour_icons_sm_music.png');
 }
-.grid-filters ul #photo span, .grid-item.photo span{
+.grid-filters ul #photo span, .grid-filters ul #photobooth span, .grid-item.photo span, .grid-filters ul #photo span, .grid-item.photobooth span{
 	background: url('images/boomtour_icons_sm_photo.png');
 }
 .grid-filters ul #social span, .grid-item.social span{
@@ -2471,6 +2471,6 @@ ul.rocket-board-order li:first-child{ border-top: 0px; }
 
 @media (max-width: 1360px) {
 	.grid-filters {
-		max-width: 1000px;
+		max-width: 840px;
 	}
 }

@@ -9,11 +9,15 @@
 
 //require_once 'twitter-feed.php';
 
-require_once 'instagram-feed.php';
+//require_once 'instagram-feed.php';
+
+require_once 'feeds/read-instagram.php';
 
 require_once 'product-feed.php';
 
 require_once 'polls-feed.php';
+
+require_once 'photobooth-feed.php';
 
 
 get_header(); ?>
@@ -60,6 +64,7 @@ get_header(); ?>
 	//$grid = array_merge($grid, $feedTweets);
 	
 	$grid = array_merge($grid, $feedInstagram);
+	$grid = array_sprinkle($grid, $feedPhotobooth);
 	//$grid = array_sprinkle($grid, $feedInstagram);
 	$grid = array_sprinkle($grid, $feedPolls);
 	$grid = array_sprinkle($grid, $feedProducts, false, 3);
@@ -73,6 +78,7 @@ get_header(); ?>
 			<li id="all" class="filter">All<span></span></li>
             <li id="music" class="filter">Music<span></span></li>
             <li id="photo" class="filter">Instagram<span></span></li>
+            <li id="photobooth" class="filter">Photobooth<span></span></li>
         	<!--<li id="social" class="filter">Twitter<span></span></li>-->
             <li id="poll" class="filter">Polls<span></span></li>
             <li id="game" class="filter">Games<span></span></li>
@@ -131,6 +137,15 @@ get_header(); ?>
                      <img src="<?php echo $item['low_resolution'] ?>" />
                     <div><span></span></div>
                     <p><?php echo trimCaption($item['caption']) ?></p>
+                    </div>
+                </a>
+            <?php endif; ?>
+            
+            <?php if($item['type'] == "photobooth") : ?>
+                <a href="<?php echo $item['image'] ?>" title="<a href='<?php echo $item['link'] ?>' target='_blank'>View on photomadic</a></p>" class="image-popup-fit-width" >
+                    <div class="grid-item <?php echo $item['type'] ?>">
+                     <img src="<?php echo $item['low_resolution'] ?>" />
+                    <div><span></span></div>
                     </div>
                 </a>
             <?php endif; ?>

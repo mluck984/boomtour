@@ -20,7 +20,9 @@ $blacklist_users = array(
 		'energysquadintl',
 		'kristen_rocco',
 		'shirleyho__',
-		'natemichaelis'
+		'natemichaelis',
+		'bigg_burd',
+		'pablo____.___'
 	);
 
 $feedInstagram = array();

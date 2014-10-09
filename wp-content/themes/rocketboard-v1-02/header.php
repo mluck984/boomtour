@@ -112,7 +112,7 @@
 	?>
     
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/jquery-1.10.2.min.js"></script>
-	<script src="wp-content/themes/rocketboard-v1-02/javascript/jquery-ui.min.js"></script>
+<!--	<script src="wp-content/themes/rocketboard-v1-02/javascript/jquery-ui.min.js"></script>-->
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/masonry.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/video.js"></script>
 	<script src="wp-content/themes/rocketboard-v1-02/javascript/bigvideo.js"></script>

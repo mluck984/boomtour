@@ -191,22 +191,18 @@ function initGrid(){
 		console.log(str);
 		$.cookie("boomtour-polls", str, { expires: 30 });
 	});
-}
-
-
-
-//MOBILE
-$(function() {
+	
 	if( screen.width > 640 ) {
 		var BV = new $.BigVideo({container: $('.header-video'), doLoop: true, useFlashForFirefox:false});
 		BV.init();
 		if ($.browser.mozilla) {
 			BV.show('wp-content/themes/rocketboard-v1-02/assets/BoomTour_NewVid_1.ogv',{ambient:true});
 		} else{
-			BV.show('wp-content/themes/rocketboard-v1-02/assets/BoomTour_NewVid_1.mp4',{ambient:true});
+			console.log("load video");
+			BV.show('wp-content/themes/rocketboard-v1-02/assets/BoomVan_Vid_Update.mp4',{ambient:true});
 		}
 	}
-});
+}
 
 function strToIndex(string){
 	if(string == 'twitter') return 0;
